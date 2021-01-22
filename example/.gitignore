@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/feed-example
+feed-example.so
+feed-example.dylib
+feed-example.dll
+feed-example.a
+feed-example.lib
+feed-example-test-*
+*.exe
+*.o
+*.obj
+*.lst

@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Ryhon"
+	],
+	"copyright": "Copyright © 2021, Ryhon",
+	"description": "Feed example",
+	"license": "LGPL-3.0",
+	"name": "feed-example",
+	"dependencies": {
+		"ffeedd": {"path": ".."}
+	}
+}
