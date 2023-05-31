@@ -159,7 +159,7 @@ class Feed
 			if (item.description)
 				s ~= "\t\t\t<description>" ~ htmlAttribEscape(item.description) ~ "</description>\n";
 
-			foreach (author; authors)
+			foreach (author; item.authors)
 			s ~= "\t\t\t<author>" ~ htmlAttribEscape(author.email) ~ " (" ~ htmlAttribEscape(author.name) ~ ")</author>\n";
 
 			if (item.published != DateTime())
