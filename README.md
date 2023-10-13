@@ -22,9 +22,10 @@ foreach (i; 0 .. 6)
 	auto item = new FeedItem("Blog post " ~ i.to!string(),
 		"https://ryhn.link/blog/" ~ i.to!string(), 
 		"This is the " ~ i.to!string() ~ " post");
+	item.content = item.content = `Example Content <a href="https://example.com">with html</a>.`;
 	item.published = Clock.currTime().to!DateTime();
 	item.updated = Clock.currTime().to!DateTime() + (i+2).hours;
-	item.authors ~= Author("Writer " ~ i.to!string(), "writer" ~ i.to!string()~ "@ryhn.link");
+	item.authors ~= Author("Writer " ~ i.to!string() ~ "<writer" ~ i.to!string()~ "@ryhn.link>");
 	f.items ~= item;
 }
 writeln(f.createAtomFeed());

@@ -90,6 +90,9 @@ class Feed
 			if (item.description)
 				s ~= "\t\t<summary>" ~ htmlAttribEscape(item.description) ~ "</summary>\n";
 
+			if (item.content)
+				s ~= "\t\t<content type=\"html\">" ~ htmlAttribEscape(item.content)  ~ "</content>\n";
+
 			foreach (author; item.authors)
 			{
 				s ~= "\t\t<author>\n";
@@ -120,7 +123,7 @@ class Feed
 
 	string createRSSFeed()
 	{
-		string s = "<rss version=\"2.0\">
+		string s = "<rss xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" version=\"2.0\">
 	<channel>\n";
 
 		if (title)
@@ -158,6 +161,9 @@ class Feed
 
 			if (item.description)
 				s ~= "\t\t\t<description>" ~ htmlAttribEscape(item.description) ~ "</description>\n";
+
+			if (item.content)
+				s ~= "\t\t\t<content:encoded>" ~ htmlAttribEscape(item.content)  ~ "</content:encoded>\n";
 
 			foreach (author; item.authors)
 			s ~= "\t\t\t<author>" ~ htmlAttribEscape(author.email) ~ " (" ~ htmlAttribEscape(author.name) ~ ")</author>\n";

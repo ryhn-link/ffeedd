@@ -22,6 +22,8 @@ class FeedItem
 	string link;
 	/// Description of the item
 	string description;
+	/// Content of the item
+	string content;
 
 	/// List of item authors
 	Author[] authors;
